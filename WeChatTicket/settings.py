@@ -107,16 +107,27 @@ WSGI_APPLICATION = 'WeChatTicket.wsgi.application'
 # Database
 # https://docs.djangoproject.com/en/1.9/ref/settings/#databases
 
-DATABASES = {
-    'default': {
+if os.getenv('TRAVIS', None):
+    DATABASES={
+        'default': {
         'ENGINE': 'django.db.backends.mysql',
-        'NAME': CONFIGS['DB_NAME'],
-        'USER': CONFIGS['DB_USER'],
-        'PASSWORD': CONFIGS['DB_PASS'],
-        'HOST': CONFIGS['DB_HOST'],
-        'PORT': CONFIGS['DB_PORT'],
+        'NAME': 'asfgh',
+        'USER': 'root',
+        'PASSWORD': 'yourpassword',
+        'HOST': '127.0.0.1',
+        }
     }
-}
+else:
+    DATABASES = {
+        'default': {
+            'ENGINE': 'django.db.backends.mysql',
+            'NAME': CONFIGS['DB_NAME'],
+            'USER': CONFIGS['DB_USER'],
+            'PASSWORD': CONFIGS['DB_PASS'],
+            'HOST': CONFIGS['DB_HOST'],
+            'PORT': CONFIGS['DB_PORT'],
+        }
+    }
 
 
 # Password validation
