@@ -7,7 +7,7 @@
     "WECHAT_SECRET": "6153263c16bb8fbb77caaff1b9c16568",
     "DB_NAME": "asdfgh",
     "DB_USER": "root",
-    "DB_PASS": "123456",
+    "DB_PASS": "yourpassword",
     "DB_HOST": "localhost",
     "DB_PORT": "3306",
     "SITE_DOMAIN": "http://dcc01f5a.ngrok.io"
