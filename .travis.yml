@@ -3,12 +3,21 @@ sudo: enabled
 services:
     - mysql
 python:
-    - "3.6"
+    - "3.5"
+env:
+    global:
+     - TRAVIS=true
+    matrix:
+     - DJANGO=1.9.5 DB=mysql
 before_install:
     - mysql -e 'CREATE DATABASE IF NOT EXISTS wechat_ticket;'
 # command to install dependencies
 install:
     - pip install -r requirements.txt
-
+before_script:
+    - mysql -e 'create database travis_ci_db;' -uroot
+    - mysql -e "grant all privilieges on *.* to 'travis'@'%';" -uroot
+    - python manage.py migrate
+    
 script:
     python manage.py test
