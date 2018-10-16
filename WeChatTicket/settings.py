@@ -24,19 +24,33 @@ CONFIGS = json.loads(open(os.path.join(BASE_DIR, 'configs.json')).read())
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
+if os.getenv('TRAVIS', None):
+    "SECRET_KEY": "ThisIsARandomStringWithLength=50!-----------------",
+    "DEBUG": true,
+    "IGNORE_WECHAT_SIGNATURE": false,
+    "WECHAT_TOKEN": "7ccf2c9c77392cc7c0e5590fdb3e9ad0",
+    "WECHAT_APPID": "wxa7ece8e47c0e7f34",
+    "WECHAT_SECRET": "6153263c16bb8fbb77caaff1b9c16568",
+    SECRET_KEY = "ThisIsARandomStringWithLength=50!-----------------",
+    DEBUG = true,
+    IGNORE_WECHAT_SIGNATURE = false,
+    WECHAT_TOKEN ="7ccf2c9c77392cc7c0e5590fdb3e9ad0",
+    WECHAT_APPID = "wxa7ece8e47c0e7f34",
+    WECHAT_SECRET = "6153263c16bb8fbb77caaff1b9c16568",
+else:
 # SECURITY WARNING: keep the secret key used in production secret!
-SECRET_KEY = CONFIGS['SECRET_KEY']
+    SECRET_KEY = CONFIGS['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = CONFIGS['DEBUG']
+    DEBUG = CONFIGS['DEBUG']
 
 # SECURITY WARNING: don't run with IGNORE_WECHAT_SIGNATURE turned on in production!
-IGNORE_WECHAT_SIGNATURE = CONFIGS['IGNORE_WECHAT_SIGNATURE']
+    IGNORE_WECHAT_SIGNATURE = CONFIGS['IGNORE_WECHAT_SIGNATURE']
 
 # SECURITY WARNING: keep the WeChat token, appid and secret used in production secret!
-WECHAT_TOKEN = CONFIGS['WECHAT_TOKEN']
-WECHAT_APPID = CONFIGS['WECHAT_APPID']
-WECHAT_SECRET = CONFIGS['WECHAT_SECRET']
+    WECHAT_TOKEN = CONFIGS['WECHAT_TOKEN']
+    WECHAT_APPID = CONFIGS['WECHAT_APPID']
+    WECHAT_SECRET = CONFIGS['WECHAT_SECRET']
 
 ALLOWED_HOSTS = [
     'dcc01f5a.ngrok.io',
@@ -113,8 +127,8 @@ if os.getenv('TRAVIS', None):
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'asfgh',
         'USER': 'root',
-        'PASSWORD': 'yourpassword',
-        'HOST': '127.0.0.1',
+        'PASSWORD': '',
+        'HOST': 'localhost',
         }
     }
 else:
