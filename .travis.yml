@@ -3,7 +3,7 @@ sudo: enabled
 services:
     - mysql
 python:
-    - "3.5"
+    - "3.6"
 before_install:
     - mysql -e 'CREATE DATABASE IF NOT EXISTS wechat_ticket;'
 # command to install dependencies
