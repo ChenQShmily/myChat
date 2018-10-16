@@ -7,8 +7,6 @@ python:
 env:
     global:
      - TRAVIS=true
-    matrix:
-     - DJANGO=1.9.5 DB=mysql
 before_install:
     - mysql -e 'CREATE DATABASE IF NOT EXISTS wechat_ticket;'
 # command to install dependencies
