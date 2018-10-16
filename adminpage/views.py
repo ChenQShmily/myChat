@@ -7,6 +7,8 @@ import datetime
 from WeChatTicket.settings import SITE_DOMAIN
 
 # Create your views here.
+def testDemoAdd(x, y):
+    return x + y
 
 # 登录
 class adminLogin(APIView):
