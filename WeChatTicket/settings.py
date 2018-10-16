@@ -25,12 +25,6 @@ CONFIGS = json.loads(open(os.path.join(BASE_DIR, 'configs.json')).read())
 # See https://docs.djangoproject.com/en/1.9/howto/deployment/checklist/
 
 if os.getenv('TRAVIS', None):
-    "SECRET_KEY": "ThisIsARandomStringWithLength=50!-----------------",
-    "DEBUG": true,
-    "IGNORE_WECHAT_SIGNATURE": false,
-    "WECHAT_TOKEN": "7ccf2c9c77392cc7c0e5590fdb3e9ad0",
-    "WECHAT_APPID": "wxa7ece8e47c0e7f34",
-    "WECHAT_SECRET": "6153263c16bb8fbb77caaff1b9c16568",
     SECRET_KEY = "ThisIsARandomStringWithLength=50!-----------------",
     DEBUG = true,
     IGNORE_WECHAT_SIGNATURE = false,
