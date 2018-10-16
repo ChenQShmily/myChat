@@ -113,7 +113,7 @@ if os.getenv('TRAVIS', None):
         'ENGINE': 'django.db.backends.mysql',
         'NAME': 'asfgh',
         'USER': 'root',
-        'PASSWORD': '123456',
+        'PASSWORD': 'yourpassword',
         'HOST': 'localhost',
         }
     }
