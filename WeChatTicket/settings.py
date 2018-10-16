@@ -31,20 +31,20 @@ if os.getenv('TRAVIS', None):
     WECHAT_TOKEN ="7ccf2c9c77392cc7c0e5590fdb3e9ad0",
     WECHAT_APPID = "wxa7ece8e47c0e7f34",
     WECHAT_SECRET = "6153263c16bb8fbb77caaff1b9c16568",
-else:
+#else:
 # SECURITY WARNING: keep the secret key used in production secret!
-    SECRET_KEY = CONFIGS['SECRET_KEY']
+    #SECRET_KEY = CONFIGS['SECRET_KEY']
 
 # SECURITY WARNING: don't run with debug turned on in production!
-    DEBUG = CONFIGS['DEBUG']
+    #DEBUG = CONFIGS['DEBUG']
 
 # SECURITY WARNING: don't run with IGNORE_WECHAT_SIGNATURE turned on in production!
-    IGNORE_WECHAT_SIGNATURE = CONFIGS['IGNORE_WECHAT_SIGNATURE']
+    #IGNORE_WECHAT_SIGNATURE = CONFIGS['IGNORE_WECHAT_SIGNATURE']
 
 # SECURITY WARNING: keep the WeChat token, appid and secret used in production secret!
-    WECHAT_TOKEN = CONFIGS['WECHAT_TOKEN']
-    WECHAT_APPID = CONFIGS['WECHAT_APPID']
-    WECHAT_SECRET = CONFIGS['WECHAT_SECRET']
+    #WECHAT_TOKEN = CONFIGS['WECHAT_TOKEN']
+    #WECHAT_APPID = CONFIGS['WECHAT_APPID']
+    #WECHAT_SECRET = CONFIGS['WECHAT_SECRET']
 
 ALLOWED_HOSTS = [
     'dcc01f5a.ngrok.io',
@@ -125,17 +125,17 @@ if os.getenv('TRAVIS', None):
         'HOST': 'localhost',
         }
     }
-else:
-    DATABASES = {
-        'default': {
-            'ENGINE': 'django.db.backends.mysql',
-            'NAME': CONFIGS['DB_NAME'],
-            'USER': CONFIGS['DB_USER'],
-            'PASSWORD': CONFIGS['DB_PASS'],
-            'HOST': CONFIGS['DB_HOST'],
-            'PORT': CONFIGS['DB_PORT'],
-        }
-    }
+#else:
+ #   DATABASES = {
+ #       'default': {
+ #           'ENGINE': 'django.db.backends.mysql',
+ #           'NAME': CONFIGS['DB_NAME'],
+ #           'USER': CONFIGS['DB_USER'],
+ #           'PASSWORD': CONFIGS['DB_PASS'],
+ #           'HOST': CONFIGS['DB_HOST'],
+ #           'PORT': CONFIGS['DB_PORT'],
+ #       }
+ #   }
 
 
 # Password validation
@@ -180,7 +180,7 @@ STATIC_ROOT = os.path.join(BASE_DIR, 'static')
 
 
 # Site and URL
-SITE_DOMAIN = CONFIGS['SITE_DOMAIN'].rstrip('/')
+SITE_DOMAIN = 'http://dcc01f5a.ngrok.io'.rstrip('/')
 
 
 def get_url(path, params=None):
