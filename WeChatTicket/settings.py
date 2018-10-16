@@ -114,7 +114,7 @@ if os.getenv('TRAVIS', None):
         'NAME': 'asfgh',
         'USER': 'root',
         'PASSWORD': 'yourpassword',
-        'HOST': 'localhost',
+        'HOST': '127.0.0.1',
         }
     }
 else:
