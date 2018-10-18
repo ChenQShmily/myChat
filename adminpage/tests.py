@@ -1,9 +1,9 @@
 from django.test import TestCase
- from . import views as views
+from . import views as views
 		
  # Create your tests here.		 
 class AnimalTestCase(TestCase):
-
+	
      def test_animals_can_speak(self):
          """add test demo"""
          testNum = 4
